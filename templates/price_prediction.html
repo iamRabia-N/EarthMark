@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Exo:wght@400;700&display=swap">
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
+
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <link rel="stylesheet" type="text/css"
+            href="{{ url_for('static', filename='css/price_prediction.css') }}">
+        <script
+            src="{{ url_for('static', filename='js/price_prediction.js') }}"></script>
+
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+            integrity="sha384-TIhlT5ct1l9UjLTVK8TJOJwyMVi7uxoKu5VP7Q9fYUAQ2rxlH5R2BrJw9a9louM6"
+            crossorigin="anonymous">
+        <link rel="stylesheet" href="path/to/font-awesome/css/all.min.css">
+
+        <title>EarthMark | Real-Estate Price Prediction</title>
+    </head>
+
+    <body>
+        <header>
+            <div class="hamburger-icon"></div>
+        </header>
+
+        <div id="sidebar">
+            <div class="sidebar-header">
+                <a href="{{ url_for('landing_page') }}"
+                    id="website-name-sidebar">EarthMark</a>
+                <div class="close-sidebar-icon">&#10005;</div>
+            </div>
+
+            <hr class="sidebar-separator">
+            <div class="sidebar-content">
+                <a href="{{ url_for('landing_page') }}"
+                    class="sidebar-heading">Home</a>
+                <hr class="sidebar-separator">
+                <a href="{{ url_for('price_prediction') }}"
+                    class="sidebar-heading">Land Price Prediction</a>
+                <hr class="sidebar-separator">
+                <a href="{{ url_for('news') }}" class="sidebar-heading">Market
+                    Trends and Latest News</a>
+                <hr class="sidebar-separator">
+                <a href="{{ url_for('about') }}"
+                    class="sidebar-heading">About</a>
+            </div>
+        </div>
+
+        <main>
+            <section class="video-section">
+                <video autoplay muted id="bg-video">
+                    <source
+                        src="{{ url_for('static', filename='videos/vid (4).mp4') }}"
+                        type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="left-icon" onclick="playPreviousVideo()">
+                    <img
+                        src="{{ url_for('static', filename='images/icon.png') }}"
+                        alt="Left Arrow">
+                </div>
+                <div class="right-icon" onclick="playNextVideo()">
+                    <img
+                        src="{{ url_for('static', filename='images/icon.png') }}"
+                        alt="Right Arrow">
+                </div>
+            </section>
+            <section class="content-section">
+                <div class="rectangle">
+                    <p class="rectangle-content">Let's predict price</p>
+                </div>
+
+                <div class="scrolling-content">
+                    <div class="container">
+                        <form id="price-form" class="form-container"
+                            method="POST"
+                            action="{{ url_for('price_prediction') }}">
+                            <h2 id="combined-heading">User Input Section</h2>
+                            <div class="form-row">
+                                <input type="text" id="land-area"
+                                    name="land-area"
+                                    placeholder="Land Area in Square Meters"
+                                    required>
+                                <span class="error-message" id="area-error">{{
+                                    errors.area }}</span>
+                            </div>
+
+                            <div class="form-row">
+                                <input type="number" id="num-bedrooms"
+                                    name="num-bedrooms"
+                                    placeholder="Number of Bedrooms" required>
+                                <span class="error-message"
+                                    id="bedrooms-error"></span>
+                            </div>
+                            <div class="form-row">
+                                <input type="number" id="num-bathrooms"
+                                    name="num-bathrooms"
+                                    placeholder="Number of Bathrooms" required>
+                                <span class="error-message"
+                                    id="bathrooms-error"></span>
+                            </div>
+                            <div class="form-row">
+                                <input type="text" id="location" name="location"
+                                    placeholder="Location" required>
+                                <span class="error-message"
+                                    id="location-error"></span>
+                            </div>
+
+                            <div class="form-row">
+                                <button type="submit"><i
+                                        class="fas fa-check-circle"></i>
+                                    Submit</button>
+                            </div>
+                        </form>
+                        <div id="price-result"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <section id="combined-section" class="content-section">
+            <div class="content-wrapper">
+                <h2 id="result-heading">PRICE PREDICTION Based on Your
+                    INPUT</h2>
+                <div class="prediction-wrapper">
+                    <div class="prediction-box">
+                        <h2>Your Input</h2>
+                        <p><strong>Land Area:</strong> {{ input_data.area }}
+                            sq/m</p>
+                        <p><strong>Number of Bedrooms:</strong> {{
+                            input_data.bedrooms }}</p>
+                        <p><strong>Number of Bathrooms:</strong> {{
+                            input_data.bathrooms }}</p>
+                        <p><strong>Location:</strong> {{ input_data.location
+                            }}</p>
+                    </div>
+                    <div class="prediction-box">
+                        <h2>Predicted Price</h2>
+                        {% if predicted_price is not none %}
+                        <p>${{ predicted_price }}</p>
+                        <p>Above Amount in Millions </p>
+                        <p>{{ "%0.2f" % (predicted_price / 1000000) }}
+                            million</p>
+                        {% else %}
+                        <p>Prediction not available</p>
+                        {% endif %}
+                        <!-- You can dynamically update the price range using JavaScript if needed -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            const videos = [
+                "{{ url_for('static', filename='videos/vid (4).mp4') }}",
+                "{{ url_for('static', filename='videos/vid (2).mp4') }}",
+                "{{ url_for('static', filename='videos/vid (3).mp4') }}",
+                "{{ url_for('static', filename='videos/vid (1).mp4') }}"
+            ];
+            let currentVideoIndex = 0;
+            
+            // Function to play the default video (vid (4)) on page load
+            window.onload = function() {
+                document.getElementById('bg-video').src = videos[0];
+            };
+            
+            function playPreviousVideo() {
+                currentVideoIndex = (currentVideoIndex - 1 + videos.length) % videos.length;
+                document.getElementById('bg-video').src = videos[currentVideoIndex];
+            }
+            
+            function playNextVideo() {
+                currentVideoIndex = (currentVideoIndex + 1) % videos.length;
+                document.getElementById('bg-video').src = videos[currentVideoIndex];
+            }
+            </script>
+
+    </body>
+</html>
