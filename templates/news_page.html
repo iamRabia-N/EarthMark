@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Exo:wght@400;700&display=swap">
+
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <link rel="stylesheet"
+            href="{{ url_for('static', filename='css/news_page.css') }}">
+
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script
+            src="{{ url_for('static', filename='js/news_page.js') }}"></script>
+        <title>EarthMark | Real-Estate Price Prediction</title>
+
+    </head>
+
+    <body>
+        <header>
+            <div class="hamburger-icon"></div>
+        </header>
+
+        <div id="sidebar">
+            <div class="sidebar-header">
+                <a href="{{ url_for('landing_page') }}"
+                    id="website-name-sidebar">EarthMark</a>
+                <div class="close-sidebar-icon">&#10005;</div>
+            </div>
+
+            <hr class="sidebar-separator">
+            <div class="sidebar-content">
+                <a href="{{ url_for('landing_page') }}"
+                    class="sidebar-heading">Home</a>
+                <hr class="sidebar-separator">
+                <a href="{{ url_for('price_prediction') }}"
+                    class="sidebar-heading">Land Price Prediction</a>
+                <hr class="sidebar-separator">
+                <a href="{{ url_for('news') }}" class="sidebar-heading">Market
+                    Trends and Latest News</a>
+                <hr class="sidebar-separator">
+                <a href="{{ url_for('about') }}"
+                    class="sidebar-heading">About</a>
+            </div>
+
+        </div>
+        <section class="video-section">
+            <video autoplay muted loop>
+                <source
+                    src="{{ url_for('static', filename='videos/y.mp4') }}"
+                    type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            </section>
+        <section class="landing-section">
+            <div class="landing-content">
+                <h1 id="news_heading">Latest market Trends & News</h1>
+            </div>
+        </section>
+
+        <main>
+            <section class="news-section">
+                <div class="container" id="news-container"> </div>
+            </section>
+            <button id="load-more-btn" class="hidden">Load More</button>
+        </main>
+    </body>
+</html>
