@@ -1,0 +1,236 @@
+/* Reset default margin and padding */
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, figure, figcaption, blockquote, dl, dd {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set box-sizing to border-box for all elements */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+
+/* Set body styles */
+body {
+    margin: 0;
+    font-family: 'EXO', sans-serif;
+    background-color: #000;
+    color: #fff;
+}
+
+/* Header styles */
+header {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 1000;
+}
+
+/* Hamburger icon styles */
+.hamburger-icon {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.hamburger-icon::before,
+.hamburger-icon::after {
+    content: '';
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    position: absolute;
+    top: -6px;
+}
+
+.hamburger-icon::after {
+    top: 6px;
+}
+
+/* Main section styles */
+main {
+    position: relative;
+    z-index: 1; /* Ensure the main content is above the video and sidebar */
+}
+
+/* Video section styles */
+.video-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 0; /* Ensure the video is behind other content */
+}
+
+#video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+#bg-video {
+    width: 100%;
+    height: auto;
+}
+
+
+/* Content section styles */
+.content-section {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.content-wrapper {
+    text-align: left;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Website name styles */
+.website-name {
+    font-family: 'BEBAS NEUE', sans-serif;
+    font-size: 3.5em;
+    margin-bottom: -20px;
+    background: none;
+    letter-spacing: 2px;
+    color: seagreen;
+}
+
+/* Title line styles */
+.title-line {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    background: none; /* Remove background */
+}
+
+/* Explore button styles */
+.explore-button {
+    background-color: #d6d4d4; 
+    padding: 15px 30px;
+    text-decoration: none;
+    color: #333; 
+    border: none;
+    border-radius: 30px;
+    font-family: 'EXO', sans-serif;
+    font-size: 18px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle box shadow for depth */
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+.explore-button:hover {
+    background-color: #e0e0e0; /* Slightly darker background on hover */
+}
+
+/* Sidebar styles */
+#sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px; /* Adjust the width of the sidebar */
+    width: 300px; /* Same width as the right value */
+    height: 100%;
+    background: #080808;
+    transition: 0.5s;
+    z-index: 1001; /* Ensure the sidebar is above the video */
+}
+
+#sidebar.active {
+    right: 0;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 0;
+    border-bottom: 1px solid #000; /* Separator line */
+}
+
+.close-sidebar-icon {
+    cursor: pointer;
+}
+
+#website-name-sidebar {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    background: #e7e4e4;
+    color: #e7e4e4 !important;
+    text-align: center;
+    margin: 0;
+    padding-top: 5px;
+    text-decoration: none;
+}
+
+.sidebar-separator {
+    border-top: 0px solid #000000;
+    background: black;
+    margin: 15px 0;
+}
+
+.sidebar-content {
+    padding: 17px;
+    color: #e7e4e4;
+}
+
+.sidebar-heading {
+    padding: 13px;
+    margin: 0;
+    border-bottom: 1px solid #000;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition */
+    text-decoration: none; /* Remove underline */
+    color: #e7e4e4; /* Blue text color */
+}
+
+.sidebar-heading:hover {
+    background-color: #c5d4dc; /* Subtle dusty white background */
+    color: #000; /* Black text color */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* No border radius */
+}
+
+
+.sidebar-option {
+    padding: 1px 20px;
+    background-color: black; /* Black background */
+    color: #fff; /* White text color */
+    border-bottom: 1px solid #000; /* Separator line */
+}
+
+.sidebar-option:last-child {
+    border-bottom: none; /* Remove separator line for last option */
+}
+
+.cross-icon::before,
+.cross-icon::after {
+    content: '';
+    width: 3px;
+    height: 30px;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.cross-icon::before {
+    transform: rotate(-45deg);
+}
+
+.cross-icon::after {
+    transform: rotate(45deg);
+}
