@@ -6,11 +6,19 @@ from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
 from sklearn.ensemble import GradientBoostingRegressor
 from sklearn.model_selection import train_test_split
+from flask import Flask, render_template, jsonify
+from dotenv import load_dotenv
+import os
+
 
 app = Flask(__name__)
 
-# Load the dataset
-df = pd.read_csv(r"E:\Download stuff\flask\model\House_Price_dataset.csv")
+load_dotenv()
+
+API_KEY = os.getenv("API_KEY")
+
+
+df = pd.read_csv(r"E:\Download stuff\flask\House_Price_dataset.csv")
 
 # Preprocessing
 df['area'] = pd.to_numeric(df['area'].str.replace(' Marla', ''), errors='coerce')
@@ -39,13 +47,11 @@ preprocessor = ColumnTransformer(
         ('cat', categorical_transformer, categorical_features)
     ])
 
-# Model
 model = GradientBoostingRegressor(n_estimators=100, learning_rate=0.1, max_depth=3, random_state=42)
 
 pipeline = Pipeline(steps=[('preprocessor', preprocessor),
                            ('model', model)])
 
-# Train the model
 pipeline.fit(X_train, y_train)
 
 @app.route('/')
@@ -54,9 +60,9 @@ def landing_page():
 
 @app.route('/price_prediction', methods=['GET', 'POST'])
 def price_prediction():
-    errors = {}  # Dictionary to store form validation errors
-    input_data = {}  # Dictionary to store user input data
-    predicted_price = None  # Initialize predicted_price to None
+    errors = {}  
+    input_data = {}  
+    predicted_price = None  
     if request.method == 'POST':
         try:
             # Get user input from the form
@@ -73,7 +79,7 @@ def price_prediction():
                 'location': location
             }
 
-            # Make prediction using the loaded pipeline
+           
             user_input = pd.DataFrame({'area': [area],
                                        'bedrooms': [bedrooms],
                                        'baths': [baths],
@@ -81,16 +87,19 @@ def price_prediction():
             predicted_price = pipeline.predict(user_input)[0]
 
         except ValueError:
-            # Handle invalid input errors
             errors['input'] = 'Invalid input. Please enter numeric values.'
 
-    # Render the template with predicted price and user input data
     return render_template('price_prediction.html', predicted_price=predicted_price, input_data=input_data, errors=errors)
 
 
 @app.route('/about')
 def about():
     return render_template('about_page.html')
+
+
+@app.route('/api/key')
+def get_api_key():
+    return {'api_key': API_KEY}
 
 @app.route('/news')
 def news():
