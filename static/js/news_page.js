@@ -1,13 +1,11 @@
 $(document).ready(function () {
-
     // Fetch API key from Flask endpoint
     $.ajax({
         url: '/api/key',
         type: 'GET',
         success: function (response) {
             const apiKey = response.api_key;
-            // Use apiKey in your JavaScript code
-            fetchNewsFromAPI(apiKey, 15); // Example usage
+            fetchNewsFromAPI(apiKey, 15); 
         },
         error: function (error) {
             console.error('Error fetching API key:', error);
@@ -36,14 +34,6 @@ $(document).ready(function () {
             }
         });
     }
-
-    // Function to display news articles
-    function displayNews(articles) {
-        // Display news articles on the webpage
-    }
-
-
-
 
     function toggleSidebar(sidebarId) {
         $(sidebarId).toggleClass('active');
@@ -121,7 +111,6 @@ $(document).ready(function () {
 
     // JavaScript to limit the number of words in paragraph content
     document.addEventListener("DOMContentLoaded", function () {
-        // Function to limit the number of words in a paragraph
         function limitParagraphWords(paragraph) {
             var words = paragraph.textContent.split(" ");
             var maxWords = 30; // Maximum number of words allowed
@@ -137,24 +126,6 @@ $(document).ready(function () {
                 limitParagraphWords(paragraph);
             });
         }
-
-        // Call the function once initially
         limitWordsInParagraphs();
-
     });
-    // JavaScript to limit the number of words in specific paragraphs
-    document.addEventListener("DOMContentLoaded", function () {
-        var paragraphs = document.querySelectorAll(".article-details p");
-
-        paragraphs.forEach(function (paragraph) {
-            var text = paragraph.textContent.trim();
-            var words = text.split(/\s+/); // Split text by whitespace
-            var maxWords = 10; // Maximum number of words allowed
-            if (words.length > maxWords) {
-                paragraph.textContent = words.slice(0, maxWords).join(" ") + "...";
-            }
-        });
-    });
-
-
 });

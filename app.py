@@ -20,7 +20,6 @@ API_KEY = os.getenv("API_KEY")
 
 df = pd.read_csv(r"E:\Download stuff\flask\House_Price_dataset.csv")
 
-# Preprocessing
 df['area'] = pd.to_numeric(df['area'].str.replace(' Marla', ''), errors='coerce')
 
 X = df[['area', 'bedrooms', 'baths', 'location']]
