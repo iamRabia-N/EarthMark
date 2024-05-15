@@ -61,9 +61,9 @@ main {
     font-size: 3.5em;
     margin-bottom: -20px;
     background: linear-gradient(to right, #3a7bd5, #ffda83, #163560, #ffda83);
-    -webkit-background-clip: text; 
-    background-clip: text; 
-    color: transparent; 
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
     letter-spacing: 2px;
 }
 
@@ -73,6 +73,7 @@ main {
     0% {
         background-position: 100% 0;
     }
+
     /* 25% {
         background-position: 50% 50%;
     }
@@ -85,7 +86,7 @@ main {
 }
 
 #website-name {
-    animation: gradientAnimation 1s linear infinite; 
+    animation: gradientAnimation 1s linear infinite;
 }
 
 
@@ -93,12 +94,12 @@ main {
 #sidebar {
     position: fixed;
     top: 0;
-    right: -300px; 
-    width: 300px; 
+    right: -300px;
+    width: 300px;
     height: 100%;
     background: #080808;
     transition: 0.5s;
-    z-index: 1001; 
+    z-index: 1001;
 }
 
 #sidebar.active {
@@ -111,7 +112,8 @@ main {
     align-items: center;
     padding: 10px;
     margin: 0;
-    border-bottom: 1px solid #000; /* Separator line */
+    border-bottom: 1px solid #000;
+    /* Separator line */
 }
 
 .close-sidebar-icon {
@@ -146,27 +148,27 @@ main {
     border-bottom: 1px solid #000;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    text-decoration: none; 
-    color: #e7e4e4; 
+    text-decoration: none;
+    color: #e7e4e4;
 }
 
 .sidebar-heading:hover {
     background-color: #c5d4dc;
-    color: #000; 
-    text-decoration: none; 
+    color: #000;
+    text-decoration: none;
     border-radius: 5px;
 }
 
 
 .sidebar-option {
     padding: 1px 20px;
-    background-color: black; 
-    color: #fff; 
+    background-color: black;
+    color: #fff;
     border-bottom: 1px solid #000;
 }
 
 .sidebar-option:last-child {
-    border-bottom: none; 
+    border-bottom: none;
 }
 
 .close-sidebar-icon {
@@ -216,7 +218,7 @@ main {
     transform: translate(-50%, -50%);
     text-align: center;
     color: #fff;
-    margin-top: 10vh; 
+    margin-top: 10vh;
 }
 
 
@@ -224,7 +226,7 @@ main {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-top: 2vh; 
+    margin-top: 2vh;
     margin-bottom: 20vh;
 }
 
@@ -233,19 +235,19 @@ main {
     cursor: pointer;
     position: relative;
     color: #fff;
-    margin-top: 5vh; 
+    margin-top: 5vh;
     background-color: #333;
     padding: 1px 9px 12px 15px;
-    border-radius: 10px; 
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin-right: 20px;
     font-size: 13px;
 }
 
 .box:hover {
-    transform: translateY(-5px); 
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .upper-line,
@@ -259,8 +261,9 @@ main {
 
 .box:hover .upper-line,
 .box:hover .lower-line {
-    background-color: rgba(187, 222, 251, 0.603);; 
-    
+    background-color: rgba(187, 222, 251, 0.603);
+    ;
+
 }
 
 .lower-line {
@@ -278,8 +281,8 @@ main {
     width: auto;
     height: auto;
     z-index: -1;
-    object-fit: cover; 
-    filter: brightness(60%); 
+    object-fit: cover;
+    filter: brightness(60%);
 }
 
 
@@ -287,9 +290,11 @@ main {
     0% {
         transform: translate(-50%, -50%) scale(1);
     }
+
     50% {
-        transform: translate(-50%, -50%) scale(1.05); 
+        transform: translate(-50%, -50%) scale(1.05);
     }
+
     100% {
         transform: translate(-50%, -50%) scale(1);
     }
@@ -297,7 +302,7 @@ main {
 
 
 #bg-video {
-    animation: videoAnimation 5000s infinite; 
+    animation: videoAnimation 5000s infinite;
 }
 
 
@@ -325,17 +330,18 @@ main {
     margin-bottom: 30px;
     background: none;
 }
+
 @media only screen and (max-width: 768px) {
     .content-wrapper p {
-        font-size: 0.9em; 
-        width: 90% !important; 
+        font-size: 0.9em;
+        width: 90% !important;
     }
 }
 
 @media only screen and (max-width: 480px) {
     .content-wrapper p {
-        font-size: 0.8em; 
-        width: 95%; 
+        font-size: 0.8em;
+        width: 95%;
     }
 }
 
@@ -349,7 +355,7 @@ main {
 
 #section1 {
     background-color: #DEE4E9;
-    color: #2C334B; 
+    color: #2C334B;
     height: 60vh;
 }
 
@@ -359,7 +365,7 @@ main {
     margin-bottom: -20px;
     background: none;
     letter-spacing: 2px;
-   /* color: #add8e6;  Light Blue text color */
+    /* color: #add8e6;  Light Blue text color */
     color: #343A50;
     text-align: center;
     margin-top: 70px;
@@ -376,14 +382,14 @@ main {
     color: #2C334B;
     margin-bottom: 35px;
 
-    
+
 }
 
 /* Styles for Section 2 */
 #section2 {
     height: 70vh;
-    background-color: #000; 
-    color: #fff; 
+    background-color: #000;
+    color: #fff;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -396,14 +402,14 @@ main {
     height: 100%;
     background: url('/static/images/Vector1.png') no-repeat left center;
     background-size: cover;
-    overflow: hidden; 
+    overflow: hidden;
 }
 
 .right-content-section2 {
     width: 50%;
     text-align: left;
-    overflow: hidden; 
-    padding-left: 20px; 
+    overflow: hidden;
+    padding-left: 20px;
 }
 
 .right-content-section2 h2 {
@@ -418,31 +424,34 @@ main {
     color: white;
     width: 70%;
 }
+
 @media screen and (max-width: 767px) {
     .left-content-section2 {
-        display: none; 
+        display: none;
     }
 
     .right-content-section2 {
-        width: 100%; 
-        padding: 0; 
+        width: 100%;
+        padding: 0;
+        font-size: 13px;
     }
 }
 
 /* Media query for medium to large screens */
 @media screen and (min-width: 768px) {
     .left-content-section2 {
-        display: block; 
-        width: 50%; 
+        display: block;
+        width: 50%;
         background: url('/static/images/Vector1.png') no-repeat left center;
         background-size: cover;
-        overflow: hidden; 
+        overflow: hidden;
     }
 
     .right-content-section2 {
-        width: 50%; 
+        width: 50%;
         text-align: left;
-        padding-left: 20px; 
+        padding-left: 20px;
+        font-size: 13px;
     }
 }
 
@@ -451,7 +460,7 @@ main {
 #section3 {
     height: 70vh;
     background-color: #DEE4E9;
-    color: #000; 
+    color: #000;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -462,8 +471,8 @@ main {
 .left-content-section3 {
     width: 50%;
     text-align: left;
-    overflow: hidden; 
-    padding-right: 20px; 
+    overflow: hidden;
+    padding-right: 20px;
 }
 
 .left-content-section3 h2 {
@@ -484,14 +493,15 @@ main {
     height: 100%;
     background: url('/static/images/Vector\ 2.png') no-repeat right center;
     background-size: cover;
-    overflow: hidden; 
+    overflow: hidden;
 }
 
 /* Media query for smaller screens */
 @media screen and (max-width: 767px) {
     .left-content-section3 {
-        width: 100%; 
-        padding: 0; 
+        width: 100%;
+        padding: 0;
+        font-size: 13px;
     }
 
     .right-content-section3 {
@@ -502,16 +512,16 @@ main {
 /* Media query for medium to large screens */
 @media screen and (min-width: 768px) {
     .left-content-section3 {
-        width: 50%; 
+        width: 50%;
         padding-right: 20px;
     }
 
     .right-content-section3 {
-        display: block; 
-        width: 50%; 
+        display: block;
+        width: 50%;
         background: url('/static/images/Vector\ 2.png') no-repeat right center;
         background-size: cover;
-        overflow: hidden; 
+        overflow: hidden;
     }
 }
 
@@ -519,7 +529,7 @@ main {
 /* Styles for Section 4 */
 #section4 {
     height: 70vh;
-    background-color: #000; 
+    background-color: #000;
     color: #fff;
     overflow: hidden;
     display: flex;
@@ -532,20 +542,20 @@ main {
 
 
 #section4-heading {
-    font-size: 4em; 
+    font-size: 4em;
     margin-bottom: 35px;
     color: #add8e6;
 }
 
 @media screen and (max-width: 768px) {
     #section4-heading {
-        font-size: 3em; 
+        font-size: 3em;
     }
 }
 
 @media screen and (max-width: 576px) {
     #section4-heading {
-        font-size: 2.5em; 
+        font-size: 2.5em;
     }
 }
 
@@ -562,18 +572,19 @@ main {
 }
 
 .section4-image img {
-    width: 75px; 
-    height: 75px; 
+    width: 75px;
+    height: 75px;
     margin-bottom: 10px;
-    transition: transform 0.3s ease; 
+    transition: transform 0.3s ease;
 }
 
 .section4-image img:hover {
-    transform: scale(1.1); 
+    transform: scale(1.1);
+    background: none;
 }
 
 .section4-para {
-    font-size: 1.1em  !important;
+    font-size: 1.1em;
     background: none !important;
     text-align: justify !important;
     margin: auto !important;
@@ -583,11 +594,45 @@ main {
 
 }
 
-#missionpage_image2{
+#missionpage_image2 {
     width: 75px;
     height: 65px;
 }
-#missionpage_image3{
+
+#missionpage_image3 {
     width: 63px;
     height: 65px;
+}
+
+
+
+/* Media query for mobile devices with width between 425px and 592px */
+@media only screen and (min-width: 425px) and (max-width: 592px) {
+    .box {
+        padding: 5px 13px !important;
+        font-size: 11px;
+    }
+
+    .content-wrapper {
+        margin-top: -5px;
+        font-size: 13px;
+    }
+
+    .section4-para {
+        font-size: 0.8rem;
+    }
+
+    .section4-image img {
+        width: 65px;
+        height: 65px;
+    }
+
+    .section4-image img {
+        width: 55px;
+        height: 55px;
+    }
+
+    .section4-para {
+        font-size: 0.85rem;
+    }
 }
