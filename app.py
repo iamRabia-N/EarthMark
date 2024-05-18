@@ -10,12 +10,12 @@ from flask import Flask, render_template, jsonify
 from dotenv import load_dotenv
 import os
 
+def config():
+    load_dotenv()
+
+config()
 
 app = Flask(__name__)
-
-load_dotenv()
-
-API_KEY = os.getenv("API_KEY")
 
 
 df = pd.read_csv(r"E:\Download stuff\flask\House_Price_dataset.csv")
@@ -53,9 +53,11 @@ pipeline = Pipeline(steps=[('preprocessor', preprocessor),
 
 pipeline.fit(X_train, y_train)
 
+
 @app.route('/')
 def landing_page():
     return render_template('landing_page.html')
+
 
 @app.route('/price_prediction', methods=['GET', 'POST'])
 def price_prediction():
@@ -64,13 +66,11 @@ def price_prediction():
     predicted_price = None  
     if request.method == 'POST':
         try:
-            # Get user input from the form
             area = float(request.form['land-area'])
             bedrooms = float(request.form['num-bedrooms'])
             baths = float(request.form['num-bathrooms'])
             location = request.form['location']
 
-            # Store user input data
             input_data = {
                 'area': area,
                 'bedrooms': bedrooms,
@@ -96,13 +96,15 @@ def about():
     return render_template('about_page.html')
 
 
-@app.route('/api/key')
-def get_api_key():
-    return {'api_key': API_KEY}
-
 @app.route('/news')
 def news():
     return render_template('news_page.html')
+
+@app.route('/api/key', methods=['GET'])
+def get_api_key():
+    api_key = os.getenv("API_KEY")  
+    return jsonify(api_key=api_key)
+
 
 if __name__ == "__main__":
     app.run(debug=True)
