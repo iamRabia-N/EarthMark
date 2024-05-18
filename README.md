@@ -30,7 +30,7 @@ Once the cloning process is complete, navigate to the project directory using th
 cd EarthMark
 ```
 
-#### Step 3: Set Up Virtual Environment
+#### Step 3: Setup Virtual Environment
 
 First, install the `virtualenv` package if you haven't already:
 
