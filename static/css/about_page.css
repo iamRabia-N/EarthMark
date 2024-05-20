@@ -60,7 +60,9 @@ main {
     font-family: 'BEBAS NEUE', sans-serif;
     font-size: 3.5em;
     margin-bottom: -20px;
-    background: linear-gradient(to right, #3a7bd5, #ffda83, #163560, #ffda83);
+    /* background: linear-gradient(to right, #3a7bd5, #ffda83, #163560, #ffda83); */
+    /* background: linear-gradient(to right, #f5ec9e, #ffda83, #ffda83, #8db4d3, #8db4d3, #6982a5); */
+    background: linear-gradient(to right, #f5ec9e8a, #ffda83d9, #ffda83bd, #8db4d3, #8db4d3, #6982a5);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
