@@ -1,6 +1,9 @@
-# EarthMark: Real Estate Price Prediction Website
+<h1 align="center">Welcome to EarthMark</h1>
 
 EarthMark is a real estate price prediction website built to provide accurate property price estimates based on various factors. 
+
+
+# Demo
 
 ## Key Features
 - Property Price Prediction
@@ -8,7 +11,12 @@ EarthMark is a real estate price prediction website built to provide accurate pr
 - Responsive Design
 
 ## Tech Stack
-[![HTML5](https://img.shields.io/badge/-HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](#) [![CSS3](https://img.shields.io/badge/-CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](#) [![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](#) [![Python](https://img.shields.io/badge/-Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](#) [![Flask](https://img.shields.io/badge/-Flask-000000?style=for-the-badge&logo=flask&logoColor=white)](#) [![Scikit Learn](https://img.shields.io/badge/-Scikit%20Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)](#)
+
+| **Category**      | **Badges**                                                                                                                                                                   |
+|:------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Frontend          | ![HTML5](https://img.shields.io/badge/-HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/-CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) |
+| Backend           | ![Python](https://img.shields.io/badge/-Python-3776AB?style=for-the-badge&logo=python&logoColor=white) ![Flask](https://img.shields.io/badge/-Flask-000000?style=for-the-badge&logo=flask&logoColor=white)                                    |
+| Machine Learning | ![Scikit Learn](https://img.shields.io/badge/-Scikit%20Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)                                                                                                                |
 
 
 
@@ -87,4 +95,7 @@ python app.py
 *Price Prediction*
 
 ## Credits
+
+
+## Future Enhancements
 
