@@ -95,7 +95,7 @@ python app.py
 *Price Prediction*
 
 ## Credits
-
+The images and videos used in this repository are taken from [Pexels](https://www.pexels.com/). 
 
 ## Future Enhancements
 
