@@ -3,7 +3,7 @@
 EarthMark is a real estate price prediction website built to provide accurate property price estimates based on various factors. 
 
 
-# Demo
+## Demo
 
 ## Key Features
 - Property Price Prediction
