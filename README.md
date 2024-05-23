@@ -3,7 +3,7 @@
 EarthMark is a real estate price prediction website built to provide accurate property price estimates based on various factors. 
 
 
-# Demo
+## Demo
 
 ## Key Features
 - Property Price Prediction
@@ -95,7 +95,7 @@ python app.py
 *Price Prediction*
 
 ## Credits
-
+The images and videos used in this repository are taken from [Pexels](https://www.pexels.com/). 
 
 ## Future Enhancements
 
