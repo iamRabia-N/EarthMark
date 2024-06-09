@@ -23,7 +23,7 @@ EarthMark is a real estate price prediction website built to provide accurate pr
 
 ## Setup and Usage
 
-To set up a complete Flask environment for the EarthMark project, follow these steps:
+To set up a complete flask environment for the EarthMark project, follow these steps:
 
 #### Step 1: Clone the Repository
 
