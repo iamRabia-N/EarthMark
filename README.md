@@ -18,7 +18,7 @@ EarthMark is a real estate price prediction website built to provide accurate pr
 | Backend           | ![Python](https://img.shields.io/badge/-Python-3776AB?style=for-the-badge&logo=python&logoColor=white) ![Flask](https://img.shields.io/badge/-Flask-000000?style=for-the-badge&logo=flask&logoColor=white)                                    |
 | Machine Learning | ![Scikit Learn](https://img.shields.io/badge/-Scikit%20Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)                                                                                                                |
 | Design Tool      | ![Figma](https://img.shields.io/badge/-Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)                                                                                                                |
-                                                                                        |
+                                                                                      
 
 
 ## Setup and Usage
@@ -89,8 +89,10 @@ python app.py
 
 
 ## Site
-![Screenshot 1](screenshots/home.png)
-*Home Page*
+
+#### Landing Page
+![landing page](https://github.com/iamRabia-N/EarthMark/assets/115794049/29ac9875-5112-4810-b83b-f20e1c45e5ba)
+
 
 ![Screenshot 2](screenshots/prediction.png)
 *Price Prediction*
