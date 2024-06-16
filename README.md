@@ -91,16 +91,29 @@ python app.py
 ## Site
 
 #### Landing Page
-![landing page](https://github.com/iamRabia-N/EarthMark/assets/115794049/29ac9875-5112-4810-b83b-f20e1c45e5ba)
+![LATEST_LG](https://github.com/iamRabia-N/EarthMark/assets/115794049/29e1fc34-0ca9-4fbf-93b8-bd81fa376885)
 
 
 ![Screenshot 2](screenshots/prediction.png)
 *Price Prediction*
 
 ## Credits
-The images and videos used in this repository are taken from [Pexels](https://www.pexels.com/). 
+- The images and videos used in this project are taken from [Pexels](https://www.pexels.com/). 
+- The dataset used in this project is taken from [Kaggle](https://www.kaggle.com/datasets/howisusmanali/house-prices-2023-dataset).
 
 ## Future Enhancements
 
+#### Enhancement 01: Logo Integration
+A logo will be added to the top-left corner of each page. This addition aims to enhance the project's visual identity and professionalism. This addition is depicted in the following prototype images.
+
+| **Landing Page** | **Price Prediction Page** |
+|------------------|--------------------------|
+| ![enhance1](https://github.com/iamRabia-N/EarthMark/assets/115794049/c6709cdd-10e8-44e5-a2ff-8ff693da863f) | ![enhance2](https://github.com/iamRabia-N/EarthMark/assets/115794049/410e4e1b-741a-429b-8c70-5a9190e0269e) |
+| **About Page** | **Market Trends & Latest News** |
+| ![enhance3](https://github.com/iamRabia-N/EarthMark/assets/115794049/73024486-0325-42be-8549-1199fe2da89b) | ![enhance4](https://github.com/iamRabia-N/EarthMark/assets/115794049/de7812d3-4011-4b57-a056-53b72f7206e1) |
+
+
+#### Enhancement 02: Recommendation Slider 
+Addition of a recommendation slider based on user input. For example, it will display a list of properties in the same price range as the user's predicted input. This slider will appear directly below the output section. This addition is depicted in the following prototype images.
 
 ## Important NOTE
