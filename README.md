@@ -104,7 +104,7 @@ python app.py
 ## Future Enhancements
 
 #### Enhancement 01: Logo Integration
-A logo will be added to the top-left corner of each page. This addition aims to enhance the project's visual identity and professionalism. This addition is depicted in the following prototype images.
+A logo will be added to the top-left corner of each page. This addition aims to enhance the project's visual identity and professionalism. This addition is depicted in the following high-fidelity wireframe images.
 
 | **Landing Page** | **Price Prediction Page** |
 |------------------|--------------------------|
@@ -114,6 +114,12 @@ A logo will be added to the top-left corner of each page. This addition aims to 
 
 
 #### Enhancement 02: Recommendation Slider 
-Addition of a recommendation slider based on user input. For example, it will display a list of properties in the same price range as the user's predicted input. This slider will appear directly below the output section. This addition is depicted in the following prototype images.
+Addition of a recommendation slider based on user input. For example, it will display a list of properties in the same price range as the user's predicted input. This slider will appear directly below the output section. This addition is depicted in the following high-fidelity wireframe images.
+Here is the table with the titles as requested:
+
+| Current Design | Future Enhancement Work |
+|--------------------------|--------------------------|
+| ![Group 42 (2)](https://github.com/iamRabia-N/EarthMark/assets/115794049/d61d505d-d823-4d27-9bc3-2be32a357e82) | ![Group 42](https://github.com/iamRabia-N/EarthMark/assets/115794049/c1011773-20a6-4de8-8f86-f00f8945f70c) |
+
 
 ## Important NOTE
