@@ -1,16 +1,13 @@
-/* Reset default margin and padding */
 body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, figure, figcaption, blockquote, dl, dd {
     margin: 0;
     padding: 0;
 }
 
-/* Set box-sizing to border-box for all elements */
 *, *::before, *::after {
     box-sizing: border-box;
 }
 
 
-/* Set body styles */
 body {
     margin: 0;
     font-family: 'EXO', sans-serif;
@@ -18,7 +15,6 @@ body {
     color: #fff;
 }
 
-/* Header styles */
 header {
     position: fixed;
     top: 15px;
@@ -55,7 +51,7 @@ header {
 /* Main section styles */
 main {
     position: relative;
-    z-index: 1; /* Ensure the main content is above the video and sidebar */
+    z-index: 1; 
 }
 
 /* Video section styles */
@@ -64,7 +60,7 @@ main {
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    z-index: 0; /* Ensure the video is behind other content */
+    z-index: 0; 
 }
 
 #video-container {
@@ -113,7 +109,7 @@ main {
 .title-line {
     font-size: 1.2em;
     margin-bottom: 30px;
-    background: none; /* Remove background */
+    margin-top: 10px;
 }
 
 /* Explore button styles */
@@ -126,25 +122,25 @@ main {
     border-radius: 30px;
     font-family: 'EXO', sans-serif;
     font-size: 18px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle box shadow for depth */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease;
     font-weight: bold;
 }
 
 .explore-button:hover {
-    background-color: #e0e0e0; /* Slightly darker background on hover */
+    background-color: #e5e4e4; 
 }
 
 /* Sidebar styles */
 #sidebar {
     position: fixed;
     top: 0;
-    right: -300px; /* Adjust the width of the sidebar */
-    width: 300px; /* Same width as the right value */
+    right: -300px; 
+    width: 300px; 
     height: 100%;
     background: #080808;
     transition: 0.5s;
-    z-index: 1001; /* Ensure the sidebar is above the video */
+    z-index: 1001; 
 }
 
 #sidebar.active {
@@ -157,7 +153,7 @@ main {
     align-items: center;
     padding: 10px;
     margin: 0;
-    border-bottom: 1px solid #000; /* Separator line */
+    border-bottom: 1px solid #000; 
 }
 
 .close-sidebar-icon {
@@ -191,28 +187,28 @@ main {
     margin: 0;
     border-bottom: 1px solid #000;
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Smooth transition */
-    text-decoration: none; /* Remove underline */
-    color: #e7e4e4; /* Blue text color */
+    transition: background-color 0.3s ease; 
+    text-decoration: none; 
+    color: #e7e4e4; 
 }
 
 .sidebar-heading:hover {
-    background-color: #c5d4dc; /* Subtle dusty white background */
-    color: #000; /* Black text color */
-    text-decoration: none; /* Remove underline */
-    border-radius: 5px; /* No border radius */
+    background-color: #c5d4dc; 
+    color: #000; 
+    text-decoration: none; 
+    border-radius: 5px;
 }
 
 
 .sidebar-option {
     padding: 1px 20px;
-    background-color: black; /* Black background */
-    color: #fff; /* White text color */
-    border-bottom: 1px solid #000; /* Separator line */
+    background-color: black; 
+    color: #fff; 
+    border-bottom: 1px solid #000; 
 }
 
 .sidebar-option:last-child {
-    border-bottom: none; /* Remove separator line for last option */
+    border-bottom: none; 
 }
 
 .cross-icon::before,
@@ -233,4 +229,22 @@ main {
 
 .cross-icon::after {
     transform: rotate(45deg);
+}
+
+
+/* Animation Keyframes */
+@keyframes smoothSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.content-wrapper {
+    animation: smoothSlideIn 1.5s ease-in-out;
+    opacity: 1;
 }
