@@ -84,19 +84,6 @@ python app.py
 ```
 
 
-
-
-
-
-## Site
-
-#### Landing Page
-![LATEST_LG](https://github.com/iamRabia-N/EarthMark/assets/115794049/29e1fc34-0ca9-4fbf-93b8-bd81fa376885)
-
-
-![Screenshot 2](screenshots/prediction.png)
-*Price Prediction*
-
 ## Credits
 - The images and videos used in this project are taken from [Pexels](https://www.pexels.com/). 
 - The dataset used in this project is taken from [Kaggle](https://www.kaggle.com/datasets/howisusmanali/house-prices-2023-dataset).
