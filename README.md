@@ -1,15 +1,16 @@
 <h1 align="center">Welcome to EarthMark</h1>
 
-EarthMark is a real estate price prediction website built to provide accurate property price estimates based on various factors. 
+<p align="left">EarthMark is a real estate price prediction website built to provide accurate property price estimates based on various factors. </p>
 
+![EARTHMARK-DEMO-VIDEO](https://github.com/iamRabia-N/EarthMark/assets/115794049/e97a4a60-b0cc-4c02-8af4-0e2f8fc61c56)
 
-## Demo
 
 ## Key Features
 - Property Price Prediction
-- Interactive Interface
-- Responsive Design
+- User-Friendly Interface
+- Market Trends
 
+  
 ## Tech Stack
 
 | **Category**      | **Badges**                                                                                                                                                                   |
@@ -18,7 +19,6 @@ EarthMark is a real estate price prediction website built to provide accurate pr
 | Backend           | ![Python](https://img.shields.io/badge/-Python-3776AB?style=for-the-badge&logo=python&logoColor=white) ![Flask](https://img.shields.io/badge/-Flask-000000?style=for-the-badge&logo=flask&logoColor=white)                                    |
 | Machine Learning | ![Scikit Learn](https://img.shields.io/badge/-Scikit%20Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)                                                                                                                |
 | Design Tool      | ![Figma](https://img.shields.io/badge/-Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)                                                                                                                |
-                                                                                      
 
 
 ## Setup and Usage
@@ -93,20 +93,20 @@ python app.py
 #### Enhancement 01: Logo Integration
 A logo will be added to the top-left corner of each page. This addition aims to enhance the project's visual identity and professionalism. This addition is depicted in the following high-fidelity wireframe images.
 
-| **Landing Page** | **Price Prediction Page** |
-|------------------|--------------------------|
-| ![enhance1](https://github.com/iamRabia-N/EarthMark/assets/115794049/c6709cdd-10e8-44e5-a2ff-8ff693da863f) | ![enhance2](https://github.com/iamRabia-N/EarthMark/assets/115794049/410e4e1b-741a-429b-8c70-5a9190e0269e) |
-| **About Page** | **Market Trends & Latest News** |
-| ![enhance3](https://github.com/iamRabia-N/EarthMark/assets/115794049/73024486-0325-42be-8549-1199fe2da89b) | ![enhance4](https://github.com/iamRabia-N/EarthMark/assets/115794049/de7812d3-4011-4b57-a056-53b72f7206e1) |
+| **Landing Page**              | **Price Prediction Page**                     |
+|-------------------------------|----------------------------------------------|
+| <img src="https://github.com/iamRabia-N/EarthMark/assets/115794049/c6709cdd-10e8-44e5-a2ff-8ff693da863f" width="380"> | <img src="https://github.com/iamRabia-N/EarthMark/assets/115794049/410e4e1b-741a-429b-8c70-5a9190e0269e" width="380"> |
+| **About Page**                | **Market Trends & Latest News**               |
+| <img src="https://github.com/iamRabia-N/EarthMark/assets/115794049/73024486-0325-42be-8549-1199fe2da89b" width="380"> | <img src="https://github.com/iamRabia-N/EarthMark/assets/115794049/de7812d3-4011-4b57-a056-53b72f7206e1" width="380"> |
 
 
 #### Enhancement 02: Recommendation Slider 
 Addition of a recommendation slider based on user input. For example, it will display a list of properties in the same price range as the user's predicted input. This slider will appear directly below the output section. This addition is depicted in the following high-fidelity wireframe images.
-Here is the table with the titles as requested:
 
 | Current Design | Future Enhancement Work |
 |--------------------------|--------------------------|
-| ![Group 42 (2)](https://github.com/iamRabia-N/EarthMark/assets/115794049/d61d505d-d823-4d27-9bc3-2be32a357e82) | ![Group 42](https://github.com/iamRabia-N/EarthMark/assets/115794049/c1011773-20a6-4de8-8f86-f00f8945f70c) |
+| <img src="https://github.com/iamRabia-N/EarthMark/assets/115794049/f013fbb3-c0f2-48b2-8201-9061c9136177" width="400"> | <img src="https://github.com/iamRabia-N/EarthMark/assets/115794049/3fa7dad5-a912-46c4-9de6-05bd702c241a" width="400"> |
+
 
 
 ## Important NOTE
