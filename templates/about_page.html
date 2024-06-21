@@ -1,152 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Exo:wght@400;700&display=swap">
-        <link rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
 
-        <link rel="stylesheet" type="text/css"
-            href="{{ url_for('static', filename='css/about_page.css') }}">
-        <script
-            src="{{ url_for('static', filename='js/about_page.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
-        <title>EarthMark | Real-Estate Price Prediction</title>
-    </head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/about_page.css') }}">
+    <script src="{{ url_for('static', filename='js/about_page.js') }}"></script>
 
-    <body>
-        <header>
-            <div class="hamburger-icon"></div>
-        </header>
-        <div id="sidebar">
-            <div class="sidebar-header">
-                <a href="{{ url_for('landing_page') }}"
-                    id="website-name-sidebar">EarthMark</a>
-                <div class="close-sidebar-icon">&#10005;</div>
-            </div>
+    <title>EarthMark | Real Estate Price Prediction Website</title>
+</head>
 
-            <hr class="sidebar-separator">
-            <div class="sidebar-content">
-                <a href="{{ url_for('landing_page') }}"
-                    class="sidebar-heading">Home</a>
-                <hr class="sidebar-separator">
-                <a href="{{ url_for('price_prediction') }}"
-                    class="sidebar-heading">Land Price Prediction</a>
-                <hr class="sidebar-separator">
-                <a href="{{ url_for('news') }}" class="sidebar-heading">Market
-                    Trends and Latest News</a>
-                <hr class="sidebar-separator">
-                <a href="{{ url_for('about') }}"
-                    class="sidebar-heading">About</a>
-            </div>
+<body>
+    <header>
+        <div class="hamburger-icon"></div>
+    </header>
+    <div id="sidebar">
+        <div class="sidebar-header">
+            <a href="{{ url_for('landing_page') }}" id="website-name-sidebar">EarthMark</a>
+            <div class="close-sidebar-icon">&#10005;</div>
         </div>
 
-        <main>
-            <section class="video-section">
-                <video autoplay muted>
-                    <source
-                        src="{{ url_for('static', filename='videos/vid (1).mp4') }}"
-                        type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <div class="centered-content">
-                    <h2 class="website-name">Welcome to EarthMark</h2>
-                    <div class="box-section">
-                        <div class="box box1"
-                            onclick="scrollToSection('section1')">
-                            <div class="upper-line"></div>
-                            <h3>Who is EarthMark</h3>
-                            <div class="lower-line"></div>
-                        </div>
-                        <div class="box box2"
-                            onclick="scrollToSection('section2')">
-                            <div class="upper-line"></div>
-                            <h3>Our Values</h3>
-                            <div class="lower-line"></div>
-                        </div>
-                        <div class="box box3"
-                            onclick="scrollToSection('section3')">
-                            <div class="upper-line"></div>
-                            <h3>Our Mission</h3>
-                            <div class="lower-line"></div>
-                        </div>
-                        <div class="box box4"
-                            onclick="scrollToSection('section4')">
-                            <div class="upper-line"></div>
-                            <h3>What We Are Targeting</h3>
-                            <div class="lower-line"></div>
-                        </div>
+        <hr class="sidebar-separator">
+        <div class="sidebar-content">
+            <a href="{{ url_for('landing_page') }}" class="sidebar-heading">Home</a>
+            <hr class="sidebar-separator">
+            <a href="{{ url_for('price_prediction') }}" class="sidebar-heading">Land Price Prediction</a>
+            <hr class="sidebar-separator">
+            <a href="{{ url_for('news') }}" class="sidebar-heading">Market
+                Trends and Latest News</a>
+            <hr class="sidebar-separator">
+            <a href="{{ url_for('about') }}" class="sidebar-heading">About</a>
+        </div>
+    </div>
+
+    <main>
+        <section class="video-section">
+            <video autoplay muted>
+                <source src="{{ url_for('static', filename='videos/about_page_background.mp4') }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="centered-content">
+                <h2 class="website-name">Welcome to EarthMark</h2>
+                <div class="box-section">
+                    <div class="box box1" onclick="scrollToSection('section1')">
+                        <div class="upper-line"></div>
+                        <h3>Who is EarthMark</h3>
+                        <div class="lower-line"></div>
+                    </div>
+                    <div class="box box2" onclick="scrollToSection('section2')">
+                        <div class="upper-line"></div>
+                        <h3>Our Values</h3>
+                        <div class="lower-line"></div>
+                    </div>
+                    <div class="box box3" onclick="scrollToSection('section3')">
+                        <div class="upper-line"></div>
+                        <h3>Our Mission</h3>
+                        <div class="lower-line"></div>
+                    </div>
+                    <div class="box box4" onclick="scrollToSection('section4')">
+                        <div class="upper-line"></div>
+                        <h3>What We Are Targeting</h3>
+                        <div class="lower-line"></div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <section id="section1" class="content-section">
-                <div class="content-wrapper">
-                    <h2>Who is EarthMark</h2>
-                    <p>Uncover the rhythm of the property market at EarthMark.
-                        With a commitment to accuracy and precision, we explore
-                        comprehensive data and employ advanced analytics to
-                        provide genuine insights into land price predictions.
-                        Empower your decisions with real-world foresight for a
-                        confident journey in real estate.</p>
-                </div>
-            </section>
+        <section id="section1" class="content-section">
+            <div class="content-wrapper">
+                <h2>Who is EarthMark</h2>
+                <p>Uncover the rhythm of the property market at EarthMark.
+                    With a commitment to accuracy and precision, we explore
+                    comprehensive data and utilize advanced analytics to
+                    provide genuine insights into land price predictions.
+                    Empower your decisions with real-world insights for a
+                    confident journey in real estate.</p>
+            </div>
+        </section>
 
-            <section id="section2" class="content-section">
-                <div class="left-content-section2"></div>
-                <div class="right-content-section2">
-                    <h2>Our Mission</h2>
-                    <p>Our vision is to redefine real estate by making land
-                        price prediction simple and accessible. We're dedicated
-                        to empowering users with data-driven insights and market
-                        wisdom to ensure confident and informed decisions. Our
-                        goal is to create a future where property investments
-                        are smart, transparent, and prosperous. </p>
-                </div>
-            </section>
+        <section id="section2" class="content-section">
+            <div class="left-content-section2"></div>
+            <div class="right-content-section2">
+                <h2>Our Mission</h2>
+                <p>Our vision is to redefine real estate by making land
+                    price prediction simple and accessible. We're dedicated
+                    to empowering users with data-driven insights and market
+                    wisdom to ensure confident and informed decisions. Our
+                    goal is to create a future where property investments
+                    are smart, transparent and prosperous. </p>
+            </div>
+        </section>
 
-            <section id="section3" class="content-section">
-                <div class="left-content-section3">
-                    <h2>Our Values</h2>
-                    <p>Our values are rooted in integrity, innovation, and
-                        empowerment. We are committed to providing accurate and
-                        transparent land price predictions, backed by
-                        cutting-edge technology and industry expertise. Our
-                        dedication to excellence, ethical conduct, and a
-                        user-centric approach drives us to empower individuals
-                        and businesses in their real estate endeavors.</p>
-                </div>
-                <div class="right-content-section3"></div>
-            </section>
+        <section id="section3" class="content-section">
+            <div class="left-content-section3">
+                <h2>Our Values</h2>
+                <p>Our values are rooted in integrity, innovation and
+                    empowerment. We are committed to providing accurate and
+                    transparent land price predictions backed by
+                    cutting-edge technology and industry expertise. Our
+                    dedication to excellence, ethical conduct and a
+                    user-centric approach drives us to empower individuals
+                    and businesses in their real estate endeavors.</p>
+            </div>
+            <div class="right-content-section3"></div>
+        </section>
 
-            <section id="section4" class="content-section">
-                <h2 id="section4-heading">What We Are Targeting</h2>
-                <div class="section4-images">
-                    <div class="section4-image">
-                        <img
-                            src="{{ url_for('static', filename='images/Price_Predictions.png') }}"
-                            alt="Logo">
-                        <p class="section4-para">Price Predictions</p>
-                    </div>
-                    <div class="section4-image">
-                        <img
-                            src="{{ url_for('static', filename='images/Market_Trends.png') }}"
-                            alt="Logo">
-                        <p class="section4-para">Market Trends</p>
-                    </div>
-                    <div class="section4-image">
-                        <img
-                            src="{{ url_for('static', filename='images/User_Friendly_Interface.png') }}"
-                            alt="Logo">
-                        <p class="section4-para">User-Friendly Interface</p>
-                    </div>
+        <section id="section4" class="content-section">
+            <h2 id="section4-heading">What We Are Targeting</h2>
+            <div class="section4-images">
+                <div class="section4-image">
+                    <img src="{{ url_for('static', filename='images/Price_Predictions.png') }}" alt="Logo">
+                    <p class="section4-para">Price Predictions</p>
                 </div>
-            </section>
-        </main>
-    </body>
+                <div class="section4-image">
+                    <img src="{{ url_for('static', filename='images/Market_Trends.png') }}" alt="Logo">
+                    <p class="section4-para">Market Trends</p>
+                </div>
+                <div class="section4-image">
+                    <img src="{{ url_for('static', filename='images/User_Friendly_Interface.png') }}" alt="Logo">
+                    <p class="section4-para">User-Friendly Interface</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
 </html>

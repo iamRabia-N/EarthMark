@@ -1,9 +1,12 @@
 $(document).ready(function () {
+
+    // Function to toggle sidebar visibility
     function toggleSidebar(sidebarId) {
         $(sidebarId).toggleClass('active');
         updateSidebarIcon();
     }
 
+    // Function to update sidebar toggle icon
     function updateSidebarIcon() {
         const $hamburgerIcon = $('.hamburger-icon');
         const $crossIcon = $('.cross-icon');
@@ -16,18 +19,20 @@ $(document).ready(function () {
         }
     }
 
+    // Event handler for clicking hamburger icon
     $(document).on('click', '.hamburger-icon', function (event) {
         event.stopPropagation();
         toggleSidebar('#sidebar');
     });
 
+    // Event handler for clicking close sidebar icon
     $(document).on('click', '.close-sidebar-icon', function (event) {
         event.stopPropagation();
         $('#sidebar').removeClass('active');
         updateSidebarIcon();
     });
 
-
+    // Close sidebar when clicking outside of it
     $(document).on('click', function (event) {
         const $sidebar = $('#sidebar');
         if (!$(event.target).closest('#sidebar').length) {
@@ -36,7 +41,7 @@ $(document).ready(function () {
         }
     });
 
-
+    // Auto-play default video on page load
     var defaultVideo = document.getElementById('vid_4');
     defaultVideo.play();
 
@@ -50,6 +55,7 @@ $(document).ready(function () {
         showVideo(currentVideoIndex);
     });
 
+    // Function to validate form inputs
     function validateForm() {
         var isValid = true;
         $('.error-message').hide().text('');

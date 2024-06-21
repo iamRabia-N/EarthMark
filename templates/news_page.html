@@ -1,122 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
-        <link rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Exo:wght@400;700&display=swap">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-        <link rel="stylesheet"
-            href="{{ url_for('static', filename='css/news_page.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo:wght@400;700&display=swap">
 
-        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-        <script
-            src="{{ url_for('static', filename='js/news_page.js') }}"></script>
-        <title>EarthMark | Real-Estate Price Prediction</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/news_page.css') }}">
 
-    </head>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="{{ url_for('static', filename='js/news_page.js') }}"></script>
 
-    <body>
-        <header>
-            <div class="hamburger-icon"></div>
-        </header>
+    <title>EarthMark | Real Estate Price Prediction Website</title>
+</head>
 
-        <div id="sidebar">
-            <div class="sidebar-header">
-                <a href="{{ url_for('landing_page') }}"
-                    id="website-name-sidebar">EarthMark</a>
-                <div class="close-sidebar-icon">&#10005;</div>
-            </div>
+<body>
+    <header>
+        <div class="hamburger-icon"></div>
+    </header>
 
-            <hr class="sidebar-separator">
-            <div class="sidebar-content">
-                <a href="{{ url_for('landing_page') }}"
-                    class="sidebar-heading">Home</a>
-                <hr class="sidebar-separator">
-                <a href="{{ url_for('price_prediction') }}"
-                    class="sidebar-heading">Land Price Prediction</a>
-                <hr class="sidebar-separator">
-                <a href="{{ url_for('news') }}" class="sidebar-heading">Market
-                    Trends and Latest News</a>
-                <hr class="sidebar-separator">
-                <a href="{{ url_for('about') }}"
-                    class="sidebar-heading">About</a>
-            </div>
-
+    <div id="sidebar">
+        <div class="sidebar-header">
+            <a href="{{ url_for('landing_page') }}" id="website-name-sidebar">EarthMark</a>
+            <div class="close-sidebar-icon">&#10005;</div>
         </div>
-        <section class="video-section">
-            <video autoplay muted loop>
-                <source
-                    src="{{ url_for('static', filename='videos/y.mp4') }}"
-                    type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            </section>
-        <section class="landing-section">
-            <div class="landing-content">
-                <h1 id="news_heading">Latest market Trends & News</h1>
-            </div>
+
+        <hr class="sidebar-separator">
+        <div class="sidebar-content">
+            <a href="{{ url_for('landing_page') }}" class="sidebar-heading">Home</a>
+            <hr class="sidebar-separator">
+            <a href="{{ url_for('price_prediction') }}" class="sidebar-heading">Land Price Prediction</a>
+            <hr class="sidebar-separator">
+            <a href="{{ url_for('news') }}" class="sidebar-heading">Market
+                Trends and Latest News</a>
+            <hr class="sidebar-separator">
+            <a href="{{ url_for('about') }}" class="sidebar-heading">About</a>
+        </div>
+
+    </div>
+    <section class="video-section">
+        <video autoplay muted loop>
+            <source src="{{ url_for('static', filename='videos/news_page_background.mp4') }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+    <section class="landing-section">
+        <div class="landing-content">
+            <h1 id="news_heading">Market Trends and Latest News</h1>
+        </div>
+    </section>
+
+    <main>
+        <section class="news-section">
+            <div class="container" id="news-container"> </div>
         </section>
-
-        <main>
-            <section class="news-section">
-                <div class="container" id="news-container"> </div>
-            </section>
-            <button id="load-more-btn" class="hidden">Load More</button>
-        </main>
+        <button id="load-more-btn" class="hidden">Load More</button>
+    </main>
 
 
 
-        <script>
-            $(document).ready(function () {
-                // Fetch API key from Flask endpoint
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: '/api/key',
+                type: 'GET',
+                success: function (response) {
+                    const apiKey = response.api_key;
+                    fetchNewsFromAPI(apiKey, 15);
+                },
+                error: function (error) {
+                    console.error('Error fetching API key:', error);
+                }
+            });
+
+            // Function to fetch news articles using the API key
+            function fetchNewsFromAPI(apiKey, limit) {
+                var query = 'real estate market price trends';
+                var apiUrl = `https://newsapi.org/v2/everything?q=${query}&apiKey=${apiKey}&pageSize=${limit}`;
+
                 $.ajax({
-                    url: '/api/key',
+                    url: apiUrl,
                     type: 'GET',
                     success: function (response) {
-                        const apiKey = response.api_key;
-                        fetchNewsFromAPI(apiKey, 15); 
+                        if (response.status === 'ok') {
+                            const articles = response.articles;
+                            displayNews(articles);
+                        } else {
+                            console.error('Error fetching news:', response);
+                        }
                     },
                     error: function (error) {
-                        console.error('Error fetching API key:', error);
+                        console.error('Error fetching news:', error);
                     }
                 });
-    
-                // Function to fetch news articles using the API key
-                function fetchNewsFromAPI(apiKey, limit) {
-                    var query = 'real estate market price trends'; 
-                    var apiUrl = `https://newsapi.org/v2/everything?q=${query}&apiKey=${apiKey}&pageSize=${limit}`;
-    
-                    // Fetch news articles using the API key
-                    $.ajax({
-                        url: apiUrl,
-                        type: 'GET',
-                        success: function (response) {
-                            if (response.status === 'ok') {
-                                const articles = response.articles;
-                                displayNews(articles);
-                            } else {
-                                console.error('Error fetching news:', response);
-                            }
-                        },
-                        error: function (error) {
-                            console.error('Error fetching news:', error);
-                        }
-                    });
-                }
-    
-                function displayNews(articles) {
-                    var newsContainer = $('#news-container');
-                    newsContainer.empty(); 
-    
-                    var limit = 30;
-                    for (var i = 0; i < limit && i < articles.length; i++) {
-                        var article = articles[i];
-                        var articleHTML = `
+            }
+
+
+            // Function to displays news articles with titles, descriptions, images, and read more links.
+            function displayNews(articles) {
+                var newsContainer = $('#news-container');
+                newsContainer.empty();
+
+                var limit = 30;
+                for (var i = 0; i < limit && i < articles.length; i++) {
+                    var article = articles[i];
+                    var articleHTML = `
                             <div class="article">
                                 <img src="${article.urlToImage}" alt="Article Image">
                                 <div class="article-details">
@@ -126,42 +117,43 @@
                                 </div>
                             </div>
                         `;
-                        newsContainer.append(articleHTML);
-                    }
-    
-                    if (articles.length > limit) {
-                        $('#load-more-btn').removeClass('hidden');
-                    } else {
-                        $('#load-more-btn').addClass('hidden');
+                    newsContainer.append(articleHTML);
+                }
+
+                if (articles.length > limit) {
+                    $('#load-more-btn').removeClass('hidden');
+                } else {
+                    $('#load-more-btn').addClass('hidden');
+                }
+            }
+
+            $('#load-more-btn').click(function () {
+                var currentLimit = $('#news-container .article').length;
+                var newLimit = currentLimit + 10;
+                fetchNewsFromAPI(apiKey, newLimit);
+            });
+
+            // JavaScript to limit the number of words in paragraph content
+            document.addEventListener("DOMContentLoaded", function () {
+                function limitParagraphWords(paragraph) {
+                    var words = paragraph.textContent.split(" ");
+                    var maxWords = 30;
+                    if (words.length > maxWords) {
+                        paragraph.textContent = words.slice(0, maxWords).join(" ") + "...";
                     }
                 }
-    
-                $('#load-more-btn').click(function () {
-                    var currentLimit = $('#news-container .article').length;
-                    var newLimit = currentLimit + 10;
-                    fetchNewsFromAPI(apiKey, newLimit);  
-                });
-    
-                // JavaScript to limit the number of words in paragraph content
-                document.addEventListener("DOMContentLoaded", function () {
-                    function limitParagraphWords(paragraph) {
-                        var words = paragraph.textContent.split(" ");
-                        var maxWords = 30;
-                        if (words.length > maxWords) {
-                            paragraph.textContent = words.slice(0, maxWords).join(" ") + "...";
-                        }
-                    }
-    
-                    // Function to limit words in all paragraphs within the news section
-                    function limitWordsInParagraphs() {
-                        var paragraphs = document.querySelectorAll(".news-section .article-details p");
-                        paragraphs.forEach(function (paragraph) {
-                            limitParagraphWords(paragraph);
-                        });
-                    }
-                    limitWordsInParagraphs();
-                });
+
+                // Function to limit words in all paragraphs within the news section
+                function limitWordsInParagraphs() {
+                    var paragraphs = document.querySelectorAll(".news-section .article-details p");
+                    paragraphs.forEach(function (paragraph) {
+                        limitParagraphWords(paragraph);
+                    });
+                }
+                limitWordsInParagraphs();
             });
-        </script>
-    </body>
+        });
+    </script>
+</body>
+
 </html>

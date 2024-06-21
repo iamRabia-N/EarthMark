@@ -1,71 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
-        <link rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Exo:wght@400;700&display=swap">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-        <link rel="stylesheet" type="text/css"
-            href="{{ url_for('static', filename='css/landing_page.css') }}">
-        <script
-            src="{{ url_for('static', filename='js/landing_page.js') }}"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo:wght@400;700&display=swap">
 
-        <title>EarthMark | Real-Estate Price Prediction</title>
-    </head>
-    <body>
-        <header>
-            <div class="hamburger-icon"></div>
-        </header>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/landing_page.css') }}">
+    <script src="{{ url_for('static', filename='js/landing_page.js') }}"></script>
 
-        <div id="sidebar">
-            <div class="sidebar-header">
-                <a href="{{ url_for('landing_page') }}"
-                    id="website-name-sidebar">EarthMark</a>
-                <div class="close-sidebar-icon">&#10005;</div>
-            </div>
+    <title>EarthMark | Real Estate Price Prediction Website</title>
+</head>
 
-            <hr class="sidebar-separator">
-            <div class="sidebar-content">
-                <a href="{{ url_for('landing_page') }}"
-                    class="sidebar-heading">Home</a>
-                <hr class="sidebar-separator">
-                <a href="{{ url_for('price_prediction') }}"
-                    class="sidebar-heading">Land Price Prediction</a>
-                <hr class="sidebar-separator">
-                <a href="{{ url_for('news') }}" class="sidebar-heading">Market
-                    Trends and Latest News</a>
-                <hr class="sidebar-separator">
-                <a href="{{ url_for('about') }}"
-                    class="sidebar-heading">About</a>
-            </div>
+<body>
+    <header>
+        <div class="hamburger-icon"></div>
+    </header>
+
+    <div id="sidebar">
+        <div class="sidebar-header">
+            <a href="{{ url_for('landing_page') }}" id="website-name-sidebar">EarthMark</a>
+            <div class="close-sidebar-icon">&#10005;</div>
         </div>
 
-        <main>
-            <section class="video-section">
-                <div id="video-container">
-                    <video autoplay muted>
-                        <source
-                            src="{{ url_for('static', filename='videos/bg.mp4') }}"
-                            type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-            </section>
+        <hr class="sidebar-separator">
+        <div class="sidebar-content">
+            <a href="{{ url_for('landing_page') }}" class="sidebar-heading">Home</a>
+            <hr class="sidebar-separator">
+            <a href="{{ url_for('price_prediction') }}" class="sidebar-heading">Land Price Prediction</a>
+            <hr class="sidebar-separator">
+            <a href="{{ url_for('news') }}" class="sidebar-heading">Market
+                Trends and Latest News</a>
+            <hr class="sidebar-separator">
+            <a href="{{ url_for('about') }}" class="sidebar-heading">About</a>
+        </div>
+    </div>
 
-            <section class="content-section">
-                <div class="content-wrapper">
-                    <h1 id="website-name" class="website-name">EarthMark</h1>
-                    <p class="title-line">Unlock the Secrets of Tomorrow's Real
-                        Estate Market Today</p>
-                    <a href="{{ url_for('price_prediction') }}"
-                        class="explore-button">Explore</a>
-                </div>
-            </section>
-        </main>
-    </body>
+    <main>
+        <section class="video-section">
+            <div id="video-container">
+                <video autoplay muted>
+                    <source src="{{ url_for('static', filename='videos/landing_page_background.mp4') }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="content-wrapper">
+                <h1 id="website-name" class="website-name">EarthMark</h1>
+                <p class="title-line">Unlock the Secrets of Tomorrow's Real
+                    Estate Market Today</p>
+                <a href="{{ url_for('price_prediction') }}" class="explore-button">Explore</a>
+            </div>
+        </section>
+    </main>
+</body>
+
 </html>

@@ -80,10 +80,8 @@ pip install flask
 
 
 ```bash
-python app.py
+python main.py
 ```
-
-
 
 
 

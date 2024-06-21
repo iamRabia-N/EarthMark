@@ -362,7 +362,7 @@ button:hover {
     padding: 70px 0;
     color: white;
     background-color: black;
-    background-image: url("/static/images/vecccc.png");
+    background-image: url("/static/images/Model_Output_Section_Background.png");
     background-size: 1rem;
     bottom: 0;
 }
@@ -430,4 +430,8 @@ input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
 }

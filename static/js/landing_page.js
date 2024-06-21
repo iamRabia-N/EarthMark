@@ -1,5 +1,7 @@
 $(document).ready(function () {
     var currentIndex = 0;
+
+    // Function to cycle through a predefined set of colors for website's name
     function changeColor() {
         var colors = [
             'rgba(173, 216, 230, 1)',
@@ -10,6 +12,8 @@ $(document).ready(function () {
         ];
         var nextIndex = (currentIndex + 1) % colors.length;
         var gradient = 'linear-gradient(to right, ' + colors.join(', ') + ')';
+
+        // Apply gradient background and animate text color change
         $('#website-name').css({
             background: gradient,
             WebkitBackgroundClip: 'text',
@@ -21,14 +25,19 @@ $(document).ready(function () {
             color: 'transparent'
         }).animate({ color: 'rgba(255, 255, 255, 1)' }, 2000);
         currentIndex = nextIndex;
+
+        // Repeat color change after 2 seconds
         setTimeout(changeColor, 2000);
     }
     changeColor();
+
 
     function toggleSidebar(sidebarId) {
         $(sidebarId).toggleClass('active');
         updateSidebarIcon();
     }
+
+    // Function to update hamburger and close icons based on sidebar state
     function updateSidebarIcon() {
         const $hamburgerIcon = $('.hamburger-icon');
         const $crossIcon = $('.cross-icon');
@@ -41,17 +50,20 @@ $(document).ready(function () {
         }
     }
 
+    // Handle click on hamburger icon to toggle sidebar visibility
     $(document).on('click', '.hamburger-icon', function (event) {
         event.stopPropagation();
         toggleSidebar('#sidebar');
     });
 
+    // Handle click on close sidebar icon to hide sidebar
     $(document).on('click', '.close-sidebar-icon', function (event) {
-        event.stopPropagation(); 
+        event.stopPropagation();
         $('#sidebar').removeClass('active');
         updateSidebarIcon();
     });
 
+    // Close sidebar if clicked outside of it
     $(document).on('click', function (event) {
         const $sidebar = $('#sidebar');
         if (!$(event.target).closest('#sidebar').length) {
