@@ -1,13 +1,31 @@
-body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, figure, figcaption, blockquote, dl, dd {
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
     margin: 0;
     padding: 0;
 }
 
-*, *::before, *::after {
+/* Box-sizing to all elements */
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
-
+/* Body Styling*/
 body {
     margin: 0;
     font-family: 'EXO', sans-serif;
@@ -15,6 +33,7 @@ body {
     color: #fff;
 }
 
+/* Header Section Styling */
 header {
     position: fixed;
     top: 15px;
@@ -22,7 +41,7 @@ header {
     z-index: 1000;
 }
 
-/* Hamburger icon styles */
+/* Hamburger Icon Styling */
 .hamburger-icon {
     width: 30px;
     height: 3px;
@@ -48,19 +67,19 @@ header {
     top: 6px;
 }
 
-/* Main section styles */
+/* Main Section Styling */
 main {
     position: relative;
-    z-index: 1; 
+    z-index: 1;
 }
 
-/* Video section styles */
+/* Video Section Styling */
 .video-section {
     position: relative;
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    z-index: 0; 
+    z-index: 0;
 }
 
 #video-container {
@@ -79,7 +98,7 @@ main {
 }
 
 
-/* Content section styles */
+/* Content Section Styling */
 .content-section {
     position: absolute;
     bottom: 0;
@@ -95,7 +114,7 @@ main {
     box-sizing: border-box;
 }
 
-/* Website name styles */
+/* Website Name Styling */
 .website-name {
     font-family: 'BEBAS NEUE', sans-serif;
     font-size: 3.5em;
@@ -105,19 +124,36 @@ main {
     color: seagreen;
 }
 
-/* Title line styles */
+@keyframes smoothSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.content-wrapper {
+    animation: smoothSlideIn 1.5s ease-in-out;
+    opacity: 1;
+}
+
+/* Title line Styling */
 .title-line {
     font-size: 1.2em;
     margin-bottom: 30px;
     margin-top: 10px;
 }
 
-/* Explore button styles */
+/* Explore Button Styling */
 .explore-button {
-    background-color: #d6d4d4; 
+    background-color: #d6d4d4;
     padding: 15px 30px;
     text-decoration: none;
-    color: #333; 
+    color: #333;
     border: none;
     border-radius: 30px;
     font-family: 'EXO', sans-serif;
@@ -128,19 +164,19 @@ main {
 }
 
 .explore-button:hover {
-    background-color: #e5e4e4; 
+    background-color: #e5e4e4;
 }
 
-/* Sidebar styles */
+/* Sidebar Styling */
 #sidebar {
     position: fixed;
     top: 0;
-    right: -300px; 
-    width: 300px; 
+    right: -300px;
+    width: 300px;
     height: 100%;
     background: #080808;
     transition: 0.5s;
-    z-index: 1001; 
+    z-index: 1001;
 }
 
 #sidebar.active {
@@ -153,7 +189,7 @@ main {
     align-items: center;
     padding: 10px;
     margin: 0;
-    border-bottom: 1px solid #000; 
+    border-bottom: 1px solid #000;
 }
 
 .close-sidebar-icon {
@@ -187,28 +223,27 @@ main {
     margin: 0;
     border-bottom: 1px solid #000;
     cursor: pointer;
-    transition: background-color 0.3s ease; 
-    text-decoration: none; 
-    color: #e7e4e4; 
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    color: #e7e4e4;
 }
 
 .sidebar-heading:hover {
-    background-color: #c5d4dc; 
-    color: #000; 
-    text-decoration: none; 
+    background-color: #c5d4dc;
+    color: #000;
+    text-decoration: none;
     border-radius: 5px;
 }
 
-
 .sidebar-option {
     padding: 1px 20px;
-    background-color: black; 
-    color: #fff; 
-    border-bottom: 1px solid #000; 
+    background-color: black;
+    color: #fff;
+    border-bottom: 1px solid #000;
 }
 
 .sidebar-option:last-child {
-    border-bottom: none; 
+    border-bottom: none;
 }
 
 .cross-icon::before,
@@ -229,22 +264,4 @@ main {
 
 .cross-icon::after {
     transform: rotate(45deg);
-}
-
-
-/* Animation Keyframes */
-@keyframes smoothSlideIn {
-    0% {
-        opacity: 0;
-        transform: translateX(-30px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-.content-wrapper {
-    animation: smoothSlideIn 1.5s ease-in-out;
-    opacity: 1;
 }

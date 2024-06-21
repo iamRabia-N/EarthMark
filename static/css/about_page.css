@@ -1,3 +1,4 @@
+/* Global Styling */
 body {
     margin: 0;
     padding: 0;
@@ -11,6 +12,7 @@ header {
     z-index: 1000;
 }
 
+/* Sidebar Styling */
 .hamburger-icon {
     width: 30px;
     height: 3px;
@@ -36,63 +38,6 @@ header {
     top: 6px;
 }
 
-main {
-    position: relative;
-}
-
-
-.content-section {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-.content-wrapper {
-    text-align: left;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-.website-name {
-    font-family: 'BEBAS NEUE', sans-serif;
-    font-size: 3.5em;
-    margin-bottom: -20px;
-    /* background: linear-gradient(to right, #3a7bd5, #ffda83, #163560, #ffda83); */
-    /* background: linear-gradient(to right, #f5ec9e, #ffda83, #ffda83, #8db4d3, #8db4d3, #6982a5); */
-    background: linear-gradient(to right, #f5ec9e8a, #ffda83d9, #ffda83bd, #8db4d3, #8db4d3, #6982a5);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    letter-spacing: 2px;
-}
-
-
-
-@keyframes gradientAnimation {
-    0% {
-        background-position: 100% 0;
-    }
-
-    /* 25% {
-        background-position: 50% 50%;
-    }
-    75% {
-        background-position: 25% 75%;
-    } */
-    100% {
-        background-position: -100% 0;
-    }
-}
-
-#website-name {
-    animation: gradientAnimation 1s linear infinite;
-}
-
-
-/* Sidebar styles */
 #sidebar {
     position: fixed;
     top: 0;
@@ -115,13 +60,11 @@ main {
     padding: 10px;
     margin: 0;
     border-bottom: 1px solid #000;
-    /* Separator line */
 }
 
 .close-sidebar-icon {
     cursor: pointer;
 }
-
 
 #website-name-sidebar {
     font-family: 'Bebas Neue', sans-serif;
@@ -184,34 +127,29 @@ main {
 }
 
 
-
-.centered-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: #fff;
+main {
+    position: relative;
 }
 
+/* Website Name Styling */
+.website-name {
+    font-family: 'BEBAS NEUE', sans-serif;
+    font-size: 3.5em;
+    margin-bottom: -20px;
+    background: linear-gradient(to right, #f5ec9e8a, #ffda83d9, #ffda83bd, #8db4d3, #8db4d3, #6982a5);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: 2px;
+}
+
+/* Video Section Styling */
 .video-section {
     position: relative;
     height: 100vh;
     overflow: hidden;
     text-align: center;
 }
-
-#bg-video {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -1;
-}
-
 
 .centered-content {
     position: absolute;
@@ -223,7 +161,78 @@ main {
     margin-top: 10vh;
 }
 
+#bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    object-fit: cover;
+    filter: brightness(60%);
+}
 
+@keyframes videoAnimation {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.05);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+#bg-video {
+    animation: videoAnimation 5000s infinite;
+}
+
+.content-section {
+    position: relative;
+    text-align: center;
+}
+
+.content-wrapper {
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.content-section h2 {
+    font-family: 'BEBAS NEUE', sans-serif;
+    font-size: 3.5em;
+    margin-bottom: -20px;
+    background: none;
+    letter-spacing: 2px;
+    color: seagreen;
+}
+
+.content-section p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    background: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .content-wrapper p {
+        font-size: 0.9em;
+        width: 90% !important;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .content-wrapper p {
+        font-size: 0.8em;
+        width: 95%;
+    }
+}
+
+/* Styles for Boxes */
 .box-section {
     display: flex;
     justify-content: space-around;
@@ -272,89 +281,7 @@ main {
     bottom: 0;
 }
 
-
-#bg-video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -1;
-    object-fit: cover;
-    filter: brightness(60%);
-}
-
-
-@keyframes videoAnimation {
-    0% {
-        transform: translate(-50%, -50%) scale(1);
-    }
-
-    50% {
-        transform: translate(-50%, -50%) scale(1.05);
-    }
-
-    100% {
-        transform: translate(-50%, -50%) scale(1);
-    }
-}
-
-
-#bg-video {
-    animation: videoAnimation 5000s infinite;
-}
-
-
-.content-section {
-    position: relative;
-    text-align: center;
-}
-
-.content-wrapper {
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-.content-section h2 {
-    font-family: 'BEBAS NEUE', sans-serif;
-    font-size: 3.5em;
-    margin-bottom: -20px;
-    background: none;
-    letter-spacing: 2px;
-    color: seagreen;
-}
-
-.content-section p {
-    font-size: 1.2em;
-    margin-bottom: 30px;
-    background: none;
-}
-
-@media only screen and (max-width: 768px) {
-    .content-wrapper p {
-        font-size: 0.9em;
-        width: 90% !important;
-    }
-}
-
-@media only screen and (max-width: 480px) {
-    .content-wrapper p {
-        font-size: 0.8em;
-        width: 95%;
-    }
-}
-
-.title-line {
-    height: 2px;
-    background-color: #fff;
-    width: 50%;
-    margin: 0 auto 20px;
-}
-
-
+/* Section1 Styling */
 #section1 {
     background-color: #DEE4E9;
     color: #2C334B;
@@ -367,7 +294,6 @@ main {
     margin-bottom: -20px;
     background: none;
     letter-spacing: 2px;
-    /* color: #add8e6;  Light Blue text color */
     color: #343A50;
     text-align: center;
     margin-top: 70px;
@@ -383,11 +309,9 @@ main {
     margin-top: 20px;
     color: #2C334B;
     margin-bottom: 35px;
-
-
 }
 
-/* Styles for Section 2 */
+/* Section2 Styling */
 #section2 {
     height: 70vh;
     background-color: #000;
@@ -402,7 +326,7 @@ main {
 .left-content-section2 {
     width: 48%;
     height: 100%;
-    background: url('/static/images/Vector1.png') no-repeat left center;
+    background: url('/static/images/Our_Mission_Section_Img.png') no-repeat left center;
     background-size: cover;
     overflow: hidden;
 }
@@ -444,7 +368,7 @@ main {
     .left-content-section2 {
         display: block;
         width: 50%;
-        background: url('/static/images/Vector1.png') no-repeat left center;
+        background: url('/static/images/Our_Mission_Section_Img.png') no-repeat left center;
         background-size: cover;
         overflow: hidden;
     }
@@ -458,7 +382,7 @@ main {
 }
 
 
-/* Styles for Section 3 */
+/* Section3 Styling */
 #section3 {
     height: 70vh;
     background-color: #DEE4E9;
@@ -493,7 +417,7 @@ main {
 .right-content-section3 {
     width: 50%;
     height: 100%;
-    background: url('/static/images/Vector\ 2.png') no-repeat right center;
+    background: url('/static/images/Our-Values_Section_Img.png') no-repeat right center;
     background-size: cover;
     overflow: hidden;
 }
@@ -521,14 +445,14 @@ main {
     .right-content-section3 {
         display: block;
         width: 50%;
-        background: url('/static/images/Vector\ 2.png') no-repeat right center;
+        background: url('/static/images/Our-Values_Section_Img.png') no-repeat right center;
         background-size: cover;
         overflow: hidden;
     }
 }
 
 
-/* Styles for Section 4 */
+/* Section4 Styling */
 #section4 {
     height: 70vh;
     background-color: #000;
@@ -541,7 +465,6 @@ main {
     padding: 20px;
 
 }
-
 
 #section4-heading {
     font-size: 4em;
@@ -605,7 +528,6 @@ main {
     width: 63px;
     height: 65px;
 }
-
 
 
 /* Media query for mobile devices with width between 425px and 592px */

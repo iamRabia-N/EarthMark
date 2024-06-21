@@ -92,11 +92,25 @@ python main.py
 #### Enhancement 01: Logo Integration
 A logo will be added to the top-left corner of each page. This addition aims to enhance the project's visual identity and professionalism. This addition is depicted in the following high-fidelity wireframe images.
 
-| **Landing Page**              | **Price Prediction Page**                     |
-|-------------------------------|----------------------------------------------|
-| <img src="https://github.com/iamRabia-N/EarthMark/assets/115794049/c6709cdd-10e8-44e5-a2ff-8ff693da863f" width="380"> | <img src="https://github.com/iamRabia-N/EarthMark/assets/115794049/410e4e1b-741a-429b-8c70-5a9190e0269e" width="380"> |
-| **About Page**                | **Market Trends & Latest News**               |
-| <img src="https://github.com/iamRabia-N/EarthMark/assets/115794049/73024486-0325-42be-8549-1199fe2da89b" width="380"> | <img src="https://github.com/iamRabia-N/EarthMark/assets/115794049/de7812d3-4011-4b57-a056-53b72f7206e1" width="380"> |
+<table style="width:100%">
+  <tr>
+    <th style="text-align:center">Landing Page</th>
+    <th style="text-align:center">Price Prediction Page</th>
+  </tr>
+  <tr>
+    <td style="text-align:center"><img src="https://github.com/iamRabia-N/EarthMark/assets/115794049/c6709cdd-10e8-44e5-a2ff-8ff693da863f" width="380"></td>
+    <td style="text-align:center"><img src="https://github.com/iamRabia-N/EarthMark/assets/115794049/410e4e1b-741a-429b-8c70-5a9190e0269e" width="380"></td>
+  </tr>
+  <tr>
+    <th style="text-align:center">About Page</th>
+    <th style="text-align:center">Market Trends & Latest News</th>
+  </tr>
+  <tr>
+    <td style="text-align:center"><img src="https://github.com/iamRabia-N/EarthMark/assets/115794049/73024486-0325-42be-8549-1199fe2da89b" width="380"></td>
+    <td style="text-align:center"><img src="https://github.com/iamRabia-N/EarthMark/assets/115794049/de7812d3-4011-4b57-a056-53b72f7206e1" width="380"></td>
+  </tr>
+</table>
+
 
 
 #### Enhancement 02: Recommendation Slider 

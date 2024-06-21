@@ -1,4 +1,4 @@
-/* Global Styles */
+/* Global Styling */
 body {
     font-family: 'EXO', sans-serif;
     margin: 0;
@@ -6,6 +6,7 @@ body {
     background-color: #DEE4E9;
 }
 
+/* Sidebar Styling */
 #sidebar {
     position: fixed;
     top: 0;
@@ -118,7 +119,7 @@ body {
     color: #fff;
 }
 
-/* Landing Section Styles */
+/* Landing Section Styling */
 .landing-section {
     position: relative;
     height: 100%;
@@ -133,6 +134,23 @@ body {
     text-align: center;
     z-index: 1;
     color: white;
+}
+
+/* Video Section and Background */
+.video-section {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    text-align: center;
+}
+
+.video-section video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 #news_heading {
@@ -165,6 +183,7 @@ main {
     padding: 20px;
 }
 
+/* Article Card */
 .article {
     background-color: #fff;
     border-radius: 15px;
@@ -175,15 +194,16 @@ main {
     flex-direction: column;
     margin-bottom: 20px;
     width: calc(100% - 40px);
-    max-width: 400px; 
+    max-width: 400px;
     margin-right: auto;
-    margin-left: 5px; 
+    margin-left: 5px;
 }
 
 
 .article-details {
-    height: 100%; 
-    overflow: auto; 
+    height: 100%;
+    overflow: auto;
+    padding: 23px;
 }
 
 @media (min-width: 768px) {
@@ -191,7 +211,6 @@ main {
         width: calc(33.33% - 20px);
     }
 }
-
 
 .article img {
     width: 100%;
@@ -201,14 +220,8 @@ main {
     border-top-right-radius: 15px;
 }
 
-
-
 .article:hover {
     transform: translateY(-5px);
-}
-
-.article-details {
-    padding: 23px;
 }
 
 .article-details h2 {
@@ -219,10 +232,9 @@ main {
 
 .article-details p {
     height: 3.7em;
-    overflow: hidden; 
-    text-overflow: ellipsis; 
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
-
 
 .article-details a {
     padding: 12px 24px;
@@ -252,12 +264,12 @@ main {
     }
 }
 
-
+/* Load More Button */
 #load-more-btn {
     font-size: 1rem;
     padding: 16px 40px;
     border: 1px solid aliceblue;
-    background: palevioletred;
+    background: black;
     color: #fff;
     text-decoration: none;
     border-radius: 21px;
@@ -271,20 +283,4 @@ main {
 
 #load-more-btn.hidden {
     display: block;
-}
-
-.video-section {
-    position: relative;
-    height: 100vh; 
-    overflow: hidden;
-    text-align: center;
-}
-
-.video-section video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%; 
-    height: 100%;
-    object-fit: cover; 
 }
