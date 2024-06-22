@@ -10,26 +10,29 @@ from flask import Flask, render_template, jsonify
 from dotenv import load_dotenv
 import os
 
+
 def config():
     load_dotenv()
+
 
 config()
 
 app = Flask(__name__)
 
 
-df = pd.read_csv(r"E:\Download stuff\flask\House_Price_dataset.csv")
+df = pd.read_csv(r"E:\EarthMark\House_Price_dataset.csv")
 
-df['area'] = pd.to_numeric(df['area'].str.replace(' Marla', ''), errors='coerce')
+df['area'] = pd.to_numeric(
+    df['area'].str.replace(' Marla', ''), errors='coerce')
 
 X = df[['area', 'bedrooms', 'baths', 'location']]
 y = df['price']
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42)
 
 numerical_features = ['area', 'bedrooms', 'baths']
 categorical_features = ['location']
-
 numerical_transformer = Pipeline(steps=[
     ('imputer', SimpleImputer(strategy='mean')),
     ('scaler', StandardScaler())
@@ -46,7 +49,8 @@ preprocessor = ColumnTransformer(
         ('cat', categorical_transformer, categorical_features)
     ])
 
-model = GradientBoostingRegressor(n_estimators=100, learning_rate=0.1, max_depth=3, random_state=42)
+model = GradientBoostingRegressor(
+    n_estimators=100, learning_rate=0.1, max_depth=3, random_state=42)
 
 pipeline = Pipeline(steps=[('preprocessor', preprocessor),
                            ('model', model)])
@@ -61,9 +65,9 @@ def landing_page():
 
 @app.route('/price_prediction', methods=['GET', 'POST'])
 def price_prediction():
-    errors = {}  
-    input_data = {}  
-    predicted_price = None  
+    errors = {}
+    input_data = {}
+    predicted_price = None
     if request.method == 'POST':
         try:
             area = float(request.form['land-area'])
@@ -78,7 +82,6 @@ def price_prediction():
                 'location': location
             }
 
-           
             user_input = pd.DataFrame({'area': [area],
                                        'bedrooms': [bedrooms],
                                        'baths': [baths],
@@ -100,9 +103,10 @@ def about():
 def news():
     return render_template('news_page.html')
 
+
 @app.route('/api/key', methods=['GET'])
 def get_api_key():
-    api_key = os.getenv("API_KEY")  
+    api_key = os.getenv("API_KEY")
     return jsonify(api_key=api_key)
 
 
