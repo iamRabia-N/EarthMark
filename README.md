@@ -1,6 +1,6 @@
 <h1 align="center">Welcome to EarthMark</h1>
 
-<p align="left">EarthMark is a real estate price prediction website built to provide accurate property price estimates based on various factors. </p>
+<p align="left">EarthMark is a real estate price prediction website built to provide accurate property price estimates based on various factors like area size, number of bedrooms, number of bathrooms, etc.  </p>
 
 ![EARTHMARK-DEMO-VIDEO](https://github.com/iamRabia-N/EarthMark/assets/115794049/e97a4a60-b0cc-4c02-8af4-0e2f8fc61c56)
 
@@ -13,7 +13,7 @@
   
 ## Tech Stack
 
-| **Category**      | **Badges**                                                                                                                                                                   |
+| **Category**      | **Toolkit Used**                                                                                                                                                                   |
 |:------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Frontend          | ![HTML5](https://img.shields.io/badge/-HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/-CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) |
 | Backend           | ![Python](https://img.shields.io/badge/-Python-3776AB?style=for-the-badge&logo=python&logoColor=white) ![Flask](https://img.shields.io/badge/-Flask-000000?style=for-the-badge&logo=flask&logoColor=white)                                    |
@@ -41,7 +41,7 @@ cd EarthMark
 
 #### Step 3: Setup Virtual Environment
 
-First, install the `virtualenv` package if you haven't already:
+First, install the `virtualenv` package:
 
 ```bash
 pip install virtualenv
@@ -69,7 +69,7 @@ source env/bin/activate
 
 #### Step 4: Install Flask
 
-With the virtual environment activated, you can now install Flask and its dependencie using pip:
+With the virtual environment activated, you can now install flask and its dependencies using pip:
 
 ```bash
 pip install flask
@@ -86,6 +86,8 @@ python main.py
 ## Credits
 - The images and videos used in this project are taken from [Pexels](https://www.pexels.com/). 
 - The dataset used in this project is taken from [Kaggle](https://www.kaggle.com/datasets/howisusmanali/house-prices-2023-dataset).
+
+
 
 ## Future Enhancements
 
@@ -114,7 +116,7 @@ A logo will be added to the top-left corner of each page. This addition aims to 
 
 
 #### Enhancement 02: Recommendation Slider 
-Addition of a recommendation slider based on user input. For example, it will display a list of properties in the same price range as the user's predicted input. This slider will appear directly below the output section. This addition is depicted in the following high-fidelity wireframe images.
+Addition of a recommendation slider based on user input. For example, it will display a list of properties in the same price range as the user's inputed based predicted price. This slider will appear directly below the output section. This addition is depicted in the following high-fidelity wireframe images.
 
 | Current Design | Future Enhancement Work |
 |--------------------------|--------------------------|
@@ -123,3 +125,33 @@ Addition of a recommendation slider based on user input. For example, it will di
 
 
 ## Important NOTE
+In this project, an API named "NewsAPI" is used on the website's "Market Trends and Latest News" page. To ensure this page works properly, you need to set up an API key. Follow these steps:
+
+- Go to [NewsAPI](https://newsapi.org/) website and sign up for a free account.
+- After signing up and logging in, look for the option to generate a new API key. Copy the API key provided.
+- Open the project's repository on your local machine. Create a file named `.env` in the root directory. Inside the `.env` file, add the following line:
+
+```bash
+API_KEY=your_api_key_here
+```
+     
+- Replace `your_api_key_here` with the API key you obtained from NewsAPI. Save the `.env` file.
+
+
+Furthermore, when running the repository, ensure the dataset file path in the main.py is correctly configured to match its location on your system. By default, the dataset is expected to be located at the following address:
+
+```bash
+df = pd.read_csv(r"E:\EarthMark\House_Price_dataset.csv")
+```
+
+If you fork this repository to a different location on your machine, you will need to update the file path accordingly in your code.
+
+
+## Bug Reporting
+
+Feel free to open an issue on GitHub if you find any bug.
+
+## Feature Requests
+
+Feel free to open an issue on GitHub to request additional features that would benefit your use case.
+
